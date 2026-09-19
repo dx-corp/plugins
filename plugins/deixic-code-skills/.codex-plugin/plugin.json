@@ -1,0 +1,28 @@
+{
+  "name": "deixic-code-skills",
+  "version": "0.1.0",
+  "description": "Reviewed skills for building, testing, reviewing, and releasing software with Deixic Code",
+  "author": {
+    "name": "EvalOps, Inc.",
+    "url": "https://www.deixic.com"
+  },
+  "homepage": "https://www.deixic.com",
+  "repository": "https://github.com/dx-corp/plugins",
+  "license": "BUSL-1.1",
+  "keywords": ["deixic", "code", "review", "testing", "release"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Deixic Code Skills",
+    "shortDescription": "Build, test, review, and release software.",
+    "longDescription": "Public skills shipped with Deixic Code for software design, testing, incident diagnosis, security review, pull-request review, and release verification.",
+    "developerName": "EvalOps, Inc.",
+    "category": "Developer Tools",
+    "capabilities": ["Build", "Review", "Diagnostics"],
+    "websiteURL": "https://www.deixic.com",
+    "defaultPrompt": [
+      "Review this change and identify proven defects.",
+      "Test this web application and report the evidence.",
+      "Verify that this release is ready to ship."
+    ]
+  }
+}
