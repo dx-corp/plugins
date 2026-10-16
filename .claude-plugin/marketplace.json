@@ -1,0 +1,15 @@
+{
+  "name": "deixic",
+  "owner": {
+    "name": "EvalOps, Inc.",
+    "url": "https://www.deixic.com"
+  },
+  "description": "Deixic plugins for Claude Code.",
+  "plugins": [
+    {
+      "name": "deixic",
+      "source": "./plugins/deixic",
+      "description": "Read your Deixic tests, controls, vendors, risks, policies and evidence in Claude Code, and fix failing tests with pull requests."
+    }
+  ]
+}
