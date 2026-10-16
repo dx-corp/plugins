@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "deixic": {
+      "type": "http",
+      "url": "https://app.deixic.com/mcp/workspace"
+    }
+  }
+}

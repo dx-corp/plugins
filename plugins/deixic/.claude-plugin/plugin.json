@@ -1,0 +1,14 @@
+{
+  "name": "deixic",
+  "displayName": "Deixic",
+  "version": "0.1.0",
+  "description": "Read your Deixic tests, controls, vendors, risks, policies and evidence in Claude Code, and fix failing tests with pull requests.",
+  "author": {
+    "name": "EvalOps, Inc.",
+    "url": "https://www.deixic.com"
+  },
+  "homepage": "https://www.deixic.com",
+  "repository": "https://github.com/dx-corp/plugins",
+  "license": "BUSL-1.1",
+  "keywords": ["deixic", "compliance", "soc2", "mcp", "remediation"]
+}
