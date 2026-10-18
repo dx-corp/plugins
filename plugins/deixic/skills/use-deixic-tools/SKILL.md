@@ -11,6 +11,7 @@ The Deixic MCP server offers the same tools Dex uses inside Deixic, minus the fe
 - Trust `tools/list`; it is the full set. Tools come from Dex's own tool registry, so new Deixic capabilities appear there without a plugin update.
 - The `deixic_*` tools are named shortcuts for common reads (failing tests, a test's results, controls, frameworks, vendors, risks, policies, evidence).
 - `deixic_read` runs any read a Deixic page renders. Call it with `read: "catalog"` first to list every read and its params, then call it with that read's name and `params`.
+- `deixic_whoami` names the organization and workspace the connection reads and the signed-in person. Call it when the person asks which org they are in, or before you state facts about "their" workspace. The connection reads exactly one organization; for another one, `deixic_switch_workspace` returns the re-consent steps (re-run `/mcp` sign-in and pick that organization).
 - The `dex_*` tools are Dex tools with Dex's own descriptions and input schemas. Pass only the arguments the schema declares. The organization, workspace and person always come from your sign-in, never from arguments.
 
 ## Reads and writes
