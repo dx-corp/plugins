@@ -51,25 +51,25 @@ query:
    image digest, domain, actor. Prefer stable identities (deployment, service,
    repo) over ephemeral pod UIDs, and never put tenant IDs, pod UIDs, or
    secrets into queries.
-2. **Find prior coverage**: `cerebro_search` (or `cerebro_gather_facts` to get
+2. **Find prior coverage**: `knowledge_search` (or `knowledge_gather_facts` to get
    matching Things plus their Facts in one pass) for each entity, with
    `include_map=true` to see linked Things.
-3. **Load incident history**: `cerebro_get_thing` on each matched Thing for its
+3. **Load incident history**: `knowledge_get_thing` on each matched Thing for its
    recent Facts, Events, and Evidence — prior incidents, deploys, and alerts
    involving the same entity.
-4. **Check open risk**: `cerebro_attention_lifecycle` for attention items
+4. **Check open risk**: `knowledge_attention_lifecycle` for attention items
    already tracking the entity.
-5. **Recover the last-known resolution**: `cerebro_action_experiences`
+5. **Recover the last-known resolution**: `knowledge_action_experiences`
    (optionally filtered by `target_system` / `kind`) for lessons and replay
    hints from terminal remediation actions on similar past incidents.
-6. **Scope blast radius**: `cerebro_map_thing` with `depth=2` on the affected
+6. **Scope blast radius**: `knowledge_map_thing` with `depth=2` on the affected
    service for dependency and ownership links.
 7. **Resolve conflicts**: when Cerebro's Facts disagree with the live alert,
-   `cerebro_debug_beliefs` on the Thing shows why Cerebro believes what it
+   `knowledge_debug_beliefs` on the Thing shows why Cerebro believes what it
    does.
 
 If Cerebro has no coverage for the entities — no matching Things, or
-`cerebro_source_health` reports the relevant sources stale or missing — state
+`knowledge_source_health` reports the relevant sources stale or missing — state
 that plainly and fall back to raw logs and metrics as the primary evidence.
 Raw evidence is the fallback, not the starting point.
 
@@ -96,7 +96,7 @@ No language-specific Maestro runtime helper is required.
 The guidelines file is the local, always-available memory; Cerebro is the
 shared one. When the run also carries the `cerebro:assert` scope, durable
 learnings (root cause, working mitigation, owner) may additionally be recorded
-with `cerebro_assert_fact` using a stable dimension, explicit confidence, and
+with `knowledge_assert_fact` using a stable dimension, explicit confidence, and
 evidence — never tenant IDs, pod UIDs, or secrets.
 
 ## Toolbox
