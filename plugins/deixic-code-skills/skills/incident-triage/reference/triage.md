@@ -1,8 +1,8 @@
 # Incident Triage Reference
 
-## Cerebro Query Patterns
+## Knowledge Query Patterns
 
-Run these against the Cerebro MCP gateway (`POST /mcp`, streamable HTTP
+Run these against the Knowledge MCP gateway (`POST /mcp`, streamable HTTP
 JSON-RPC; manifest at `GET /.well-known/evalops/cerebro-mcp.json`) before
 querying raw logs or metrics. All tools below are shipped read tools requiring
 the `cerebro:read` scope; the workspace comes from the
@@ -42,7 +42,7 @@ Cross-cutting memory queries:
   Actions into lessons and replay hints; `knowledge_action_outcome_ledger` shows
   whether proposed or queued follow-ups are still waiting for an outcome.
 - **Conflicting beliefs**: `knowledge_debug_beliefs` with `{"thing_id": "<id>"}`
-  when the alert contradicts what Cerebro believes.
+  when the alert contradicts what Knowledge believes.
 - **Coverage check**: `knowledge_source_health` with
   `{"source_systems": ["<system>"], "max_age_hours": 24}` before trusting an
   empty result — a stale or missing source means fall back to raw evidence.
