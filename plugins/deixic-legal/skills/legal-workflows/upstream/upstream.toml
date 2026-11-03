@@ -1,0 +1,5 @@
+# Verbatim source snapshot. Scripts, hooks, and MCP declarations are inert data.
+format_version = 1
+url = "https://github.com/anthropics/claude-for-legal"
+revision = "4a6c651889c97cc9140580363c73e0eb17379c2b"
+tree_sha256 = "37f0147e1a6985d74611fb082a04ba239af8fb3f36226c1116e546fd6cf7c442"
