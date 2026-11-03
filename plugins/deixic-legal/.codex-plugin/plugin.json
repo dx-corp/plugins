@@ -1,0 +1,19 @@
+{
+  "name": "deixic-legal",
+  "version": "0.1.0",
+  "description": "Legal workflow drafts adapted from Anthropic Claude for Legal for attorney review.",
+  "author": {
+    "name": "Deixic"
+  },
+  "repository": "https://github.com/dx-corp/plugins",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Deixic Legal",
+    "shortDescription": "Prepare cited legal drafts for attorney review.",
+    "defaultPrompt": [
+      "Review this agreement against the approved playbook.",
+      "Prepare a privacy impact assessment draft."
+    ]
+  }
+}
