@@ -1,0 +1,20 @@
+{
+  "name": "deixic-defending-code",
+  "version": "0.1.0",
+  "description": "Threat models, static security findings and patch proposals, and incident review using Anthropic Defending Code resources.",
+  "skills": "./skills/",
+  "author": {
+    "name": "Deixic"
+  },
+  "repository": "https://github.com/dx-corp/plugins",
+  "license": "Apache-2.0",
+  "interface": {
+    "displayName": "Deixic Defending Code",
+    "shortDescription": "Review code and incident evidence with the pinned Defending Code procedures.",
+    "defaultPrompt": [
+      "Threat model this repository using defending-code.",
+      "Review these logs and propose an incident response plan.",
+      "Plan an authorized local sandboxed reference pipeline run."
+    ]
+  }
+}

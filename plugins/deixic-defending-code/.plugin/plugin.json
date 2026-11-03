@@ -1,0 +1,6 @@
+{
+  "name": "deixic-defending-code",
+  "version": "0.1.0",
+  "description": "Threat models, static security findings and patch proposals, and incident review using Anthropic Defending Code resources.",
+  "skills": "./skills/"
+}

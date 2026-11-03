@@ -1,0 +1,5 @@
+# Verbatim source snapshot. Scripts, hooks, and MCP declarations are inert data.
+format_version = 1
+url = "https://github.com/anthropics/defending-code-reference-harness"
+revision = "d3bea6b5793b5f3d59a75ebe69a58efa88383145"
+tree_sha256 = "bd067d269ae5a9f60ca7e3e7496905f01f5afb125166c67bf81a97a6b9708db3"

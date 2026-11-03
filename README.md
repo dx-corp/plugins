@@ -2,8 +2,9 @@
 
 This repository is the public catalog for skills that ship with Deixic Code.
 The repo-level catalog is `.agents/plugins/marketplace.json`. It lists the
-software skills in `plugins/deixic-code-skills` and the legal workflow adapter
-in `plugins/deixic-legal`.
+software skills in `plugins/deixic-code-skills`, the legal workflow adapter
+in `plugins/deixic-legal`, and defensive code and incident review in
+`plugins/deixic-defending-code`.
 
 Each skill is a reviewed instruction package with its own `SKILL.md` entrypoint.
 The skills catalog excludes Deixic staff plugins, Session History, Product Kit,
@@ -58,6 +59,50 @@ The plugin registers only the `legal-workflows` skill. An unavailable connector,
 research subscription, scheduler, or editing tool remains an explicit limit.
 Local plugin state records the installed package's integrity; replacing files
 in the clone does not update the installed copy.
+
+## Defending Code in Deixic Code
+
+`deixic-defending-code` adapts Anthropic's Apache-2.0 Defending Code reference
+source at commit `d3bea6b5793b5f3d59a75ebe69a58efa88383145`. Its one entry
+skill, `defending-code`, routes to threat modeling, static source scanning,
+triage, candidate patch proposals, customization planning, and authorized log
+hunt/incident review. The unchanged 161-file source and `upstream.toml` live at
+`plugins/deixic-defending-code/skills/defending-code/upstream/`.
+
+After publication to this repository, inspect and install the local package:
+
+```sh
+git clone https://github.com/dx-corp/plugins.git deixic-plugins
+cat deixic-plugins/plugins/deixic-defending-code/.plugin/plugin.json
+cat deixic-plugins/plugins/deixic-defending-code/skills/defending-code/upstream/upstream.toml
+deixic-code plugins install "$PWD/deixic-plugins/plugins/deixic-defending-code"
+deixic-code plugins info deixic-defending-code --json
+```
+
+Start a new Deixic Code session and request `defending-code` with the authorized
+repository revision, findings, or log scope. The session loader reads the plugin
+skill; standalone skill search does not list plugin-owned skills. Candidate
+findings and inert patch diffs retain their evidence states. Incident response
+produces proposed plans; it does not block accounts, rotate credentials, or
+change services. Demo targets require explicit selection.
+
+An explicitly requested local reference pipeline requires a separately
+provisioned Linux host or VM with Docker, gVisor, restricted egress, scoped
+provider credentials, a selected model, and approved spend/run limits. Read the
+packaged `upstream/docs/security.md`, `upstream/docs/agent-sandbox.md`, and
+`upstream/docs/pipeline.md`, then use `upstream/bin/vp-sandboxed` from an approved
+working copy. Preserve its sandbox checks. Installing this plugin does not
+provision the host, install a Claude CLI, supply model access, or run a scan.
+Deixic subscriptions and inference routes do not supply independent pipeline
+entitlement. Hosted autonomous pipeline execution is not integrated.
+
+The upstream pipeline's optional Anthropic usage marker is documented in
+`upstream/docs/security.md` and `upstream/docs/pipeline.md#usage-marker`;
+`VULN_PIPELINE_NO_TELEMETRY=1` disables the pipeline marker. Nested source
+settings and skill definitions remain resources. The upstream `verify`
+procedure provides development help and remains unregistered. Reproducing a
+vulnerability requires execution evidence. Installation, queued execution, and completed
+sandboxed execution are separate states.
 
 ## Deixic for Claude Code
 

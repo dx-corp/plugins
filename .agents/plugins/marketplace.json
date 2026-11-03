@@ -27,6 +27,18 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Legal"
+    },
+    {
+      "name": "deixic-defending-code",
+      "source": {
+        "source": "local",
+        "path": "./plugins/deixic-defending-code"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Security"
     }
   ]
 }
