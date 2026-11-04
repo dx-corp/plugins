@@ -1,6 +1,6 @@
 {
   "name": "deixic-legal",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Legal workflow drafts adapted from Anthropic Claude for Legal for attorney review.",
   "skills": "./skills/"
 }

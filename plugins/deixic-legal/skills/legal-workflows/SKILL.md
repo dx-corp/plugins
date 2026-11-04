@@ -63,6 +63,9 @@ connection and the work that remains.
 
 ## Review requirements
 
+Before drafting, read `evidence.md` in this skill directory. Apply its source
+requirements to legal, customer-policy and market claims throughout the draft.
+
 Preserve the selected source procedure's citation, confidentiality, privilege,
 and escalation requirements. Identify jurisdiction and source dates. Cite
 source documents and passages for material assertions, distinguish a cited fact
