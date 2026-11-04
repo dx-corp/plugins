@@ -94,7 +94,15 @@ packaged `upstream/docs/security.md`, `upstream/docs/agent-sandbox.md`, and
 working copy. Preserve its sandbox checks. Installing this plugin does not
 provision the host, install a Claude CLI, supply model access, or run a scan.
 Deixic subscriptions and inference routes do not supply independent pipeline
-entitlement. Hosted autonomous pipeline execution is not integrated.
+entitlement.
+
+Hosted Deixic uses the separate **Defending Code autonomous scan** package in
+its Skills catalog, for workspaces enabled in the rollout. It scans scoped
+C/C++ source with installed local dependencies, replays candidates and patches
+in fresh sandboxes, obtains independent model triage, and saves a draft report.
+It uses Dex's managed model loop and existing execution owner; the unchanged
+Claude CLI/Docker reference pipeline remains a separate local workflow. If the
+hosted package is absent from the catalog, that workspace is not enabled yet.
 
 The upstream pipeline's optional Anthropic usage marker is documented in
 `upstream/docs/security.md` and `upstream/docs/pipeline.md#usage-marker`;
