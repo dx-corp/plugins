@@ -8,9 +8,9 @@ description: Use when the person asks to fix a failing Deixic test, for example 
 The fix lands in the person's own repository. Deixic re-runs the test after the change is live; this skill does not mark anything passed.
 
 ## 1. Read the failure
-- Find the test: `deixic_list_failing_tests` with `search` set to the name, or use the id given.
+- Find the test: `deixic_list_tests` with `states: ["FRAMEWORK_COVERAGE_STATE_FAILING"]` and `search` set to the name, or use the id given.
 - `deixic_get_test` with `check_object_id`: list every failing resource and the evidence that shows the failure (the setting read, its value, the expected value).
-- `deixic_get_test_remediation`: note the deadline and any earlier fix.
+- For the SLA deadline and any earlier fix, ask Dex with `dex_converse_send` and read its answer after `dex_converse_wait`.
 
 ## 2. Find where the setting is managed
 Search the current repository before writing anything:
