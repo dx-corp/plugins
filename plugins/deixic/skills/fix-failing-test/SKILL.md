@@ -8,9 +8,9 @@ description: Use when the person asks to fix a failing Deixic test, for example 
 The fix lands in the person's own repository. Deixic re-runs the test after the change is live; this skill does not mark anything passed.
 
 ## 1. Read the failure
-- Find the test: `deixic_list_tests` with `states: ["FRAMEWORK_COVERAGE_STATE_FAILING"]` and `search` set to the name, or use the id given.
-- `deixic_get_test` with `check_object_id`: list every failing resource and the evidence that shows the failure (the setting read, its value, the expected value).
-- For the SLA deadline and any earlier fix, ask Dex with `dex_converse_send` and read its answer after `dex_converse_wait`.
+- Find the test: `read` with `{"read": "ListControlTests", "params": {"states": ["FRAMEWORK_COVERAGE_STATE_FAILING"], "search": <the name>}}`, or use the id given.
+- `read` with `{"read": "GetComplianceCheck", "params": {"check_object_id": ...}}`: list every failing resource and the evidence that shows the failure (the setting read, its value, the expected value).
+- For the SLA deadline and any earlier fix, ask Dex with `ask_human`; pass any returned `resume_token` back until it answers.
 
 ## 2. Find where the setting is managed
 Search the current repository before writing anything:
@@ -28,4 +28,4 @@ Search the current repository before writing anything:
 - Use `gh pr create`. Do not merge.
 
 ## 5. Report
-Give the PR link, the resources it fixes, and any failing resource it does not fix and why. If the person wants an owner assigned in Deixic, say which tool would do it once write access is granted.
+Give the PR link, the resources it fixes, and any failing resource it does not fix and why. If the person wants an owner assigned in Deixic, ask Dex with `ask_human`; Dex prepares it and the person approves it in Deixic.

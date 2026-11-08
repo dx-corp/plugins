@@ -1,8 +1,8 @@
 {
   "name": "deixic",
   "displayName": "Deixic",
-  "version": "0.3.0",
-  "description": "Use your Deixic workspace from Claude Code with the same tools Dex uses: tests, controls, frameworks, vendors, risks, policies, evidence, training and evaluation results. Fix failing tests with pull requests.",
+  "version": "0.4.0",
+  "description": "Use your Deixic workspace from Claude Code with the six tools Dex uses: tests, controls, frameworks, vendors, risks, policies, evidence, training and evaluation results. Fix failing tests with pull requests.",
   "author": {
     "name": "EvalOps, Inc.",
     "url": "https://www.deixic.com"

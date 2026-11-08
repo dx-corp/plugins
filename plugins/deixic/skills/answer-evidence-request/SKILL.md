@@ -5,9 +5,9 @@ description: Use when the person needs to answer an auditor's evidence request o
 
 # Answer an auditor evidence request
 
-1. Find the request: ask Dex with `dex_converse_send` for the evidence request by its title, control or audit, with its owner, due date, status, linked controls and frameworks. Call `dex_converse_wait` with the returned cursor until the state is `completed`, then `dex_converse_read`.
-2. For each linked control, call `deixic_get_control` (`control_id`) to see its tests and current state.
-3. For each automated test on those controls, call `deixic_get_test` to get the latest result, when it ran, the source it read, and the per-resource evidence.
+1. Find the request: ask Dex with `ask_human` (`message` and a fresh `idempotency_key`) for the evidence request by its title, control or audit, with its owner, due date, status, linked controls and frameworks. If it returns a `resume_token`, pass it back until the state is `completed`.
+2. For each linked control, call `read` with `{"read": "GetControlDetail", "params": {"control_id": ...}}` to see its tests and current state.
+3. For each automated test on those controls, call `read` with `{"read": "GetComplianceCheck", "params": {"check_object_id": ...}}` to get the latest result, when it ran, the source it read, and the per-resource evidence.
 4. Draft the response:
    - what the control requires, in one sentence;
    - the evidence that meets it: each item with its source system, the date it was collected, and the test run it came from;
