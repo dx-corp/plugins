@@ -4,13 +4,17 @@ This repository is the public catalog for skills that ship with Deixic Code.
 The repo-level catalog is `.agents/plugins/marketplace.json`. It lists the
 software skills in `plugins/deixic-code-skills`, the legal workflow adapter
 in `plugins/deixic-legal`, and defensive code and incident review in
-`plugins/deixic-defending-code`. The separate Claude Code catalog,
-`.claude-plugin/marketplace.json`, lists the integration in `plugins/deixic`.
+`plugins/deixic-defending-code`. `plugins/deixic` is the integration with a
+Deixic workspace. It is listed in the repo catalog, in the Claude catalog
+`.claude-plugin/marketplace.json` and in the Cursor catalog
+`.cursor-plugin/marketplace.json`; see its README for install and sign-in.
 
 Each skill is a reviewed instruction package with its own `SKILL.md` entrypoint.
 The skills catalog excludes Deixic staff plugins, Session History, Product Kit,
 and credentials. Installing a skills plugin grants no service access and adds
-no authentication flow.
+no authentication flow. Only `plugins/deixic` connects to a service: it names
+one MCP server and holds no token, and the person signs in to Deixic in their
+browser.
 
 Validate a prepared catalog locally with:
 

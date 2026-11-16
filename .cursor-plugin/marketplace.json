@@ -1,0 +1,16 @@
+{
+  "name": "deixic",
+  "owner": {
+    "name": "EvalOps, Inc."
+  },
+  "metadata": {
+    "description": "Deixic plugins for Cursor."
+  },
+  "plugins": [
+    {
+      "name": "deixic",
+      "source": "plugins/deixic",
+      "description": "Read your Deixic tests, controls, vendors, risks, policies and evidence in Cursor, and fix failing tests with pull requests."
+    }
+  ]
+}

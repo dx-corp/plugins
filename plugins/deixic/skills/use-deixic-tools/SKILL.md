@@ -12,8 +12,14 @@ The Deixic MCP server lists six tools, the same six Dex uses. Deixic runs each c
 - `read`: what a Deixic page shows. `{"read": "catalog"}` lists every read; `{"read": "whoami"}` names the organization and workspace this connection reads, the signed-in person, and how to re-consent for another organization (re-run `/mcp` sign-in and pick it). For example, failing tests: `{"read": "ListControlTests", "params": {"states": ["FRAMEWORK_COVERAGE_STATE_FAILING"]}}`; one test: `GetComplianceCheck` with `check_object_id`; one control: `GetControlDetail` with `control_id`; report datasets: `ListReportDatasets`, then `QueryReport` with a `definition`.
 - `call`: a read `search` found, such as a connected-system read (`{"name": ..., "arguments": {"connection_id": ..., ...}}`).
 - `run`: up to eight `read`, `search` and `call` steps in one request.
-- `act`: a change `search` found. Preview it (`phase: "preview"`), then submit the same `op` and `args` with the returned `plan_digest`. A submit only requests the change; the person approves it in the Deixic UI.
+- `act`: a change `search` found. Preview it (`phase: "preview"`), then submit the same `op` and `args`, adding the returned `plan_digest`. A submit only requests the change; the person approves it in the Deixic UI.
 - `ask_human`: ask Dex, Deixic's agent.
+
+## Order of work
+1. `read` with `{"read": "whoami"}` first. It names the organization, the workspace and the signed-in person. If that is not the workspace the person means, stop and tell them how to re-consent.
+2. Find the read: `read` with `{"read": "catalog"}` lists every page read; `search` finds a read or a change by words and returns its input schema.
+3. Run what `search` returned with the tool the hit names: `read` for a page read, `call` for another read. Use `run` to send several of these steps at once.
+4. For a change, `act` with `phase: "preview"`, show the person the returned plan, then `act` with `phase: "submit"`, the same `op` and `args`, and the returned `plan_digest`. Tell the person the change waits for approval in the Deixic UI. Never report it as done.
 
 ## Ask Dex for everything else
 For anything a single read does not answer, such as programs, vendors, risks, policies, evidence, training, remediation history or a question that needs several reads joined, ask Dex:
