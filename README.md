@@ -4,7 +4,8 @@ This repository is the public catalog for skills that ship with Deixic Code.
 The repo-level catalog is `.agents/plugins/marketplace.json`. It lists the
 software skills in `plugins/deixic-code-skills`, the legal workflow adapter
 in `plugins/deixic-legal`, and defensive code and incident review in
-`plugins/deixic-defending-code`.
+`plugins/deixic-defending-code`. The separate Claude Code catalog,
+`.claude-plugin/marketplace.json`, lists the integration in `plugins/deixic`.
 
 Each skill is a reviewed instruction package with its own `SKILL.md` entrypoint.
 The skills catalog excludes Deixic staff plugins, Session History, Product Kit,
@@ -18,13 +19,13 @@ node scripts/distribution-validation.mjs --name plugins --target .
 ```
 
 The validator checks the repo catalog, plugin manifest, exact public skill
-allowlist, frontmatter, paths, and license material. Add this repository through
+allowlist, front matter, paths, and license material. Add this repository through
 the repo marketplace flow supported by your Codex client; the repository does
 not include a custom installer.
 
 ## Legal workflows in Deixic Code
 
-`deixic-legal` adapts Anthropic's Apache-2.0 `claude-for-legal` source at
+`deixic-legal` adapts the Apache-2.0 `claude-for-legal` source from Anthropic at
 commit `4a6c651889c97cc9140580363c73e0eb17379c2b`. Its `legal-workflows`
 skill reads the packaged practice procedures and prepares drafts for attorney
 review. It covers commercial, privacy, product, corporate, employment,
@@ -62,8 +63,8 @@ in the clone does not update the installed copy.
 
 ## Defending Code in Deixic Code
 
-`deixic-defending-code` adapts Anthropic's Apache-2.0 Defending Code reference
-source at commit `d3bea6b5793b5f3d59a75ebe69a58efa88383145`. Its one entry
+`deixic-defending-code` adapts the Apache-2.0 Defending Code reference
+source from Anthropic at commit `d3bea6b5793b5f3d59a75ebe69a58efa88383145`. Its one entry
 skill, `defending-code`, routes to threat modeling, static source scanning,
 triage, candidate patch proposals, customization planning, and authorized log
 hunt/incident review. The unchanged 161-file source and `upstream.toml` live at
@@ -87,7 +88,7 @@ produces proposed plans; it does not block accounts, rotate credentials, or
 change services. Demo targets require explicit selection.
 
 An explicitly requested local reference pipeline requires a separately
-provisioned Linux host or VM with Docker, gVisor, restricted egress, scoped
+provisioned Linux host or VM with Docker, `gVisor`, restricted egress, scoped
 provider credentials, a selected model, and approved spend/run limits. Read the
 packaged `upstream/docs/security.md`, `upstream/docs/agent-sandbox.md`, and
 `upstream/docs/pipeline.md`, then use `upstream/bin/vp-sandboxed` from an approved
@@ -110,7 +111,7 @@ The upstream pipeline's optional Anthropic usage marker is documented in
 settings and skill definitions remain resources. The upstream `verify`
 procedure provides development help and remains unregistered. Reproducing a
 vulnerability requires execution evidence. Installation, queued execution, and completed
-sandboxed execution are separate states.
+isolated execution are separate states.
 
 ## Deixic for Claude Code
 
