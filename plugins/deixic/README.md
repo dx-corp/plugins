@@ -9,8 +9,10 @@ and commands that use it.
 - The six tools Dex uses: `search`, `read`, `call`, `run`, `act` and
   `ask_human`. Each call runs with your own Deixic permissions, so a result
   shows what the matching Deixic page shows you.
-- Skills: `use-deixic-tools`, `triage-failing-tests`, `fix-failing-test` and
-  `answer-evidence-request`.
+- Skills: `security-compliance` (sends any question about the company's security
+  or compliance to Deixic and Dex instead of answering from general knowledge),
+  `security-questionnaire`, `change-check`, `use-deixic-tools`,
+  `triage-failing-tests`, `fix-failing-test` and `answer-evidence-request`.
 - Commands: `/deixic:failing`, `/deixic:fix <test>` and `/deixic:status`.
 
 ## Install

@@ -1,8 +1,8 @@
 {
   "name": "deixic",
   "displayName": "Deixic",
-  "version": "0.5.0",
-  "description": "Use your Deixic workspace from Claude with the six tools Dex uses: tests, controls, frameworks, vendors, risks, policies, evidence, training and evaluation results. Fix failing tests with pull requests.",
+  "version": "0.6.0",
+  "description": "Use your Deixic workspace from Claude with the six tools Dex uses: tests, controls, frameworks, vendors, risks, policies, evidence, training and evaluation results. Sends security and compliance questions to Deixic and Dex, fills security questionnaires from your records, checks changes against your controls, and fixes failing tests with pull requests.",
   "author": {
     "name": "EvalOps, Inc.",
     "url": "https://www.deixic.com"
